@@ -20,6 +20,11 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             'adminlte'
         );
 
+        $this->publishes([
+            'vendor/almasaeed2010/adminlte/dist' => public_path('adminlte'),
+            'vendor/almasaeed2010/adminlte/bower_components' => public_path('adminlte/plugins'),
+        ]);
+
         $this->app->bind('adminlte', function () {
             return new AdminLTE();
         });
