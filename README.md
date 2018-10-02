@@ -10,7 +10,7 @@
 [![Packagist](https://poser.pugx.org/renderbit-technologies/adminlte/d/total.svg)](https://packagist.org/packages/renderbit-technologies/adminlte)
 [![Packagist](https://img.shields.io/packagist/l/renderbit-technologies/adminlte.svg)](https://packagist.org/packages/renderbit-technologies/adminlte)
 
-Package description: CHANGE ME
+AdminLTE integration for Laravel 5
 
 ## Installation
 
@@ -42,9 +42,11 @@ RenderbitTechnologies\AdminLTE\Facades\AdminLTE::class,
 php artisan vendor:publish --provider="RenderbitTechnologies\AdminLTE\ServiceProvider" --tag="config"
 ```
 
-## Usage
+### Publish Assets
 
-CHANGE ME
+```bash
+php artisan vendor:publish --provider="RenderbitTechnologies\AdminLTE\ServiceProvider" --tag="assets"
+```
 
 ## Security
 

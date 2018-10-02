@@ -11,6 +11,11 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->publishes([
             self::CONFIG_PATH => config_path('adminlte.php'),
         ], 'config');
+
+        $this->publishes([
+            'vendor/almasaeed2010/adminlte/dist' => public_path('adminlte'),
+            'vendor/almasaeed2010/adminlte/bower_components' => public_path('adminlte/plugins'),
+        ], 'assets');
     }
 
     public function register()
@@ -19,11 +24,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             self::CONFIG_PATH,
             'adminlte'
         );
-
-        $this->publishes([
-            'vendor/almasaeed2010/adminlte/dist' => public_path('adminlte'),
-            'vendor/almasaeed2010/adminlte/bower_components' => public_path('adminlte/plugins'),
-        ]);
 
         $this->app->bind('adminlte', function () {
             return new AdminLTE();
