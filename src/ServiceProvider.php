@@ -16,6 +16,9 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             'vendor/almasaeed2010/adminlte/dist' => public_path('adminlte'),
             'vendor/almasaeed2010/adminlte/bower_components' => public_path('adminlte/plugins'),
         ], 'assets');
+
+        $this->loadRoutesFrom(__DIR__ . '/route.php');
+        $this->loadViewsFrom(__DIR__ . '/views', 'adminlte');
     }
 
     public function register()
